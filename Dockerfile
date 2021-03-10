@@ -13,6 +13,6 @@ COPY --from=build /home/rust/src/target/x86_64-unknown-linux-musl/release/notify
 
 EXPOSE 7867
 
-USER 605
+USER 33
 
-CMD ["/notify_push"]
+CMD ["/notify_push", "/config/config.php"]
