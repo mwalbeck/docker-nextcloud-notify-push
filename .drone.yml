@@ -8,10 +8,6 @@ steps:
     image: hadolint/hadolint
     commands:
       - hadolint Dockerfile
-    when:
-      status:
-        - failure
-        - success
 
 trigger:
   event:
