@@ -5,7 +5,7 @@ ENV NOTIFY_PUSH_VERSION v0.2.0
 
 RUN set -ex; \
     git clone --branch $NOTIFY_PUSH_VERSION https://github.com/nextcloud/notify_push.git .; \
-    cargo build --release --target=x86_64-unknown-linux-musl;
+    cargo build --release;
 
 FROM scratch
 
