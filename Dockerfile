@@ -1,4 +1,4 @@
-FROM ekidd/rust-musl-builder:1.57.0@sha256:f13a341dfbfac20ccc38d4ec8e16685508292bd25f4ba49f52673d75ffabd5e1 as build
+FROM ekidd/rust-musl-builder:1.57.0@sha256:55767f27422ee5b83b4b2e77f3540850b74b17116cc77ecdc47295a352851a3a as build
 
 # renovate: datasource=github-tags depName=nextcloud/notify_push versioning=semver
 ENV NOTIFY_PUSH_VERSION v0.3.0
