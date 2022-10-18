@@ -1,15 +1,23 @@
-FROM ekidd/rust-musl-builder:1.57.0@sha256:c18dbd9fcf3a4c0c66b8aacea5cf977ee38193efd7e98a55ee7bf9cd9954b221 as build
+FROM rust:1.64.0-bullseye@sha256:5cf09a76cb9baf4990d121221bbad64927cc5690ee54f246487e302ddc2ba300 as build
 
 # renovate: datasource=github-tags depName=nextcloud/notify_push versioning=semver
-ENV NOTIFY_PUSH_VERSION v0.4.0
+ENV NOTIFY_PUSH_VERSION v0.5.0
+
+WORKDIR /notify_push
 
 RUN set -ex; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+        musl-dev \
+        musl-tools \
+    ; \
     git clone --branch $NOTIFY_PUSH_VERSION https://github.com/nextcloud/notify_push.git .; \
+    rustup target add x86_64-unknown-linux-musl; \
     cargo build --release --target=x86_64-unknown-linux-musl;
 
 FROM scratch
 
-COPY --from=build /home/rust/src/target/x86_64-unknown-linux-musl/release/notify_push /
+COPY --from=build /notify_push/target/x86_64-unknown-linux-musl/release/notify_push /
 
 EXPOSE 7867
 
