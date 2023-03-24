@@ -1,4 +1,4 @@
-FROM rust:1.68.0-bullseye@sha256:e10f1e351cb58f164d0e89a3c2b623ae8e2757bee0311110052420709307d6ea as build
+FROM rust:1.68.1-bullseye@sha256:b5c6a1f95397a4035ac362c112083b0363df14d9f114a197244915c5b0b71ee8 as build
 
 # renovate: datasource=github-tags depName=nextcloud/notify_push versioning=semver
 ENV NOTIFY_PUSH_VERSION v0.6.0
