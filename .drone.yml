@@ -69,22 +69,6 @@ steps:
       password:
         from_secret: dockerhub_password
       repo: mwalbeck/nextcloud-notify-push
-  
-  - name: notify
-    image: plugins/matrix
-    pull: if-not-exists
-    settings:
-      homeserver: https://matrix.mwalbeck.org
-      roomid:
-        from_secret: matrix_roomid
-      username:
-        from_secret: matrix_username
-      password:
-        from_secret: matrix_password
-    when:
-      status:
-        - success
-        - failure
 
 trigger:
   branch:
@@ -97,6 +81,6 @@ depends_on:
 
 ---
 kind: signature
-hmac: 6b5d3df1bdeb70bd1d19482a74805e26b7a8f424a76cc6e8da41a14f12b44178
+hmac: c06ebb588dd0481a500c943f919482003c41a97a13394803bf1509f133a70045
 
 ...
