@@ -25,7 +25,7 @@ jobs:
           DOCKERFILE_PATH: "Dockerfile"
           CUSTOM_TAGS: "latest"
           INCLUDE_SUFFIX: "no"
-          IMAGE_NAME: "mwalbeck/nextcloud-notify-push"
+          IMAGE_NAME: "git.walbeck.it/walbeck-it/nextcloud-notify-push"
         run: |
           determine-docker-tags
           dockerd &
