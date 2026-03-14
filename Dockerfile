@@ -1,4 +1,4 @@
-FROM rust:1.93.1-trixie@sha256:ecbe59a8408895edd02d9ef422504b8501dd9fa1526de27a45b73406d734d659 AS build
+FROM rust:1.94.0-trixie@sha256:7e322aa1b876cbb977e0df46812af6c4e8be2efbfb2ce3712c28a93ba2968726 AS build
 
 # renovate: datasource=github-tags depName=nextcloud/notify_push versioning=semver
 ENV NOTIFY_PUSH_VERSION=v1.3.1
